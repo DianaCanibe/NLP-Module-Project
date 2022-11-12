@@ -23,14 +23,33 @@ text in spanish to english, an evaluated using the english original text.
 
 ### Installing
 Make sure you complete each of the next steps:
-1. Install anacoda
-2. Clone this repository, or download all the files 
-2. Run the following command : ```conda create --name <env_name> --file requirements.txt```
+1. Clone this repository, or download all the files 
+2. Install anacoda
+3. Run the following command : ```conda create --name <env_name> --file requirements.txt```
+4. If you are not using anaconda install the following libraries:
+   a. pip install -q transformers
+   b. pip install transformers[sentencepiece]
+   c. pip install googletrans==3.1.0a0
+   d. pip install flair
 
 ### Executing program
 For execution you just have to run the "run.py" file
 Before doing that check that you have changed in the code the variables:
- a.N_EXAMPLES_TO_TRAIN 
+ a. N_EXAMPLES_TO_TRAIN , this will limit the number of epochs to run
+ b. batch_size (do not change to more than 700, cause it would not work due to the size of the dataset)
+Also, be sure that the data files are stored in the same work space as the code, otherwise change the path the are in on the code.
+
+If you have problems displaying the plot for the second task, there is an alternative version on the code, just uncomment it.
+(You will require 'keras' and 'matplotlib' for this option)
+
+### Data files description
+1. 'tiny_movie_reviews_dataset.txt' 20 different movie reviews (sentiment analysis part) 
+2. 'twitter_test'  3850 words from tweets used for testing  (NER part)
+3. 'twitter_train' 2394 words from tweets used for training (NER part)
+4. 'twitter_dev' 1000 words from tweets used for validation (NER part)
+5. 'traduccion_espanol' Spanish version of the 100 first lines of the European Parliament Proceedings Parallel Corpus 1996-2011 (translation part)
+6. 'traduccion_ingles' English version of the 100 first lines of the European Parliament Proceedings Parallel Corpus 1996-2011 (translation part)
 
 ### Author
-Diana Cañibe
+Diana Cañibe Valle
+A01749422
