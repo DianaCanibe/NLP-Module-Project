@@ -75,14 +75,6 @@ def part2():
     plot= Plotter()
     plot.plot_training_curves('resources/taggers/ner-english/loss.tsv')
 
-    #Plot loss graphic
-    from tensorflow import keras
-    import matplotlib.pyplot as plt
-    base_image_path='resources/taggers/ner-english/training.png'
-    plt.figure(figsize = (12,8))
-    plt.axis("off")
-    plt.imshow(keras.utils.load_img(base_image_path),aspect='auto')
-
     #Plot loss graphic - alternative option 
     '''from tensorflow import keras
     import matplotlib.pyplot as plt
