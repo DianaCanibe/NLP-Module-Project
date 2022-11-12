@@ -10,7 +10,7 @@ The project has 3 main parts refering to different tasks:
 3. Comparing the BLEU score for 2 diferent translations over the same text
 
 For the first task I used the sentiment analysis pipeline on the transformers library with the default model,
-the clasification for each of the reviews is either POSITIVE or NEGATIVE. 
+the classification for each of the reviews is either POSITIVE or NEGATIVE. 
 
 On the second one, I used flair to further train its ner-english model over a twitter dataset.<br />
 At the end of the training the loss curve obtained is the following:
