@@ -48,8 +48,10 @@ If you have problems displaying the plot for the second task, there is an altern
 2. 'twitter_test'  3850 words from tweets used for testing  (NER part)
 3. 'twitter_train' 2394 words from tweets used for training (NER part)
 4. 'twitter_dev' 1000 words from tweets used for validation (NER part)
-5. 'traduccion_espanol' Spanish version of the 100 first lines of the European Parliament Proceedings Parallel Corpus 1996-2011 (translation part)
-6. 'traduccion_ingles' English version of the 100 first lines of the European Parliament Proceedings Parallel Corpus 1996-2011 (translation part)
+5. 'traduccion_espanol' Spanish version of the 100 first lines of the European Parliament 
+Proceedings Parallel Corpus 1996-2011 (translation part)
+6. 'traduccion_ingles' English version of the 100 first lines of the European Parliament 
+Proceedings Parallel Corpus 1996-2011 (translation part)
 
 ### Author
 Diana Cañibe Valle
