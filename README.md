@@ -18,7 +18,8 @@ At the end of the training the loss curve obtained is the following:
 
 NOTE: This is just a reference image, results ought to change between trainings. 
 
-Finally for the translation I used "googletrans" from Google and "Helsinki-NLP/opus-mt-es-en" available at Huggingface, the translation was made from spanish to english, an evaluated using the english original text. 
+Finally for the translation I used "googletrans" from Google and "Helsinki-NLP/opus-mt-es-en" available at Huggingface.<br />
+The translation was made from spanish to english, and evaluated using the english original text. 
 
 ### Installing
 Make sure you complete each of the next steps:
