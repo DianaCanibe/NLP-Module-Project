@@ -35,9 +35,9 @@ Make sure you complete each of the next steps:
 ### Executing program
 For execution you just have to run the "run.py" file
 Before doing that check that you have changed in the code the variables:<br />
-   a. N_EXAMPLES_TO_TRAIN , this will limit the number of epochs to run<br />
-   b. batch_size (do not change to more than 700, cause it would not work due to the size of the dataset)<br />
-Also, be sure that the data files are stored in the same workspace as the code, otherwise change the paths.
+   * N_EXAMPLES_TO_TRAIN , this will limit the number of epochs to run<br />
+   * batch_size (do not change to more than 700, cause it would not work due to the size of the dataset)<br />
+Also, be sure that the data files are stored in the same workspace as the code, otherwise change their paths.
 
 If you have problems displaying the plot for the second task, there is an alternative version on the code, just uncomment it.<br />
 (You will require 'keras' and 'matplotlib' for this option)
