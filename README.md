@@ -33,7 +33,7 @@ Make sure you complete each of the next steps:
    d. pip install flair<br />
 
 ### Executing program
-For execution you just have to run the "run.py" file
+For execution you just have to run the "run.py" file<br />
 Before doing that check that you have changed in the code the variables:<br />
    * N_EXAMPLES_TO_TRAIN , this will limit the number of epochs to run<br />
    * batch_size (do not change to more than 700, cause it would not work due to the size of the dataset)<br />
