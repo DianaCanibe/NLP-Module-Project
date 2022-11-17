@@ -7,28 +7,35 @@ def part1():
     
     """-------- Task 1: Sentiment Analysis -------------"""
     # Print Task number 
-    width, filler = 62, '='
+    width, filler = 62, '=' 
     print (' Task 1: Sentiment Analysis '.center(width, filler))
 
     #Read and store each review
-    reviews=[]
+    
+    reviews = []
     with open('tiny_movie_reviews_dataset.txt') as f:
-        for line in f.readlines():
-          reviews+=[line]
+         reviews = f.readlines()
+    
+    # I would define the following lines in this function as a another function called analyze_reviews and then do: 
+    # with open('tiny_movie_reviews_dataset.txt') as f:
+    #     reviews = f.readlines()
+    #     analyze_reviews(reviews)
+    # this is where classes are really helpful, since you can make those methods on the class, and then all the functionality is
+    # nicely contained and organized within the class. 
           
     #Replace quotes to avoid further problems     
-    for i in range(20):
+    for i in range(len(reviews)):
       reviews[i]=reviews[i].replace('"', '')
       reviews[i]=reviews[i].replace('\'', '')
 
     #Load sentiment analysis model
-    from transformers import pipeline
+    from transformers import pipeline # all imports should be at top! https://peps.python.org/pep-0008/#imports
     sentiment_pipeline = pipeline("sentiment-analysis",model='distilbert-base-uncased-finetuned-sst-2-english')
 
     #Run the model and print the evaluation for each review 
-    for i in range(20):
-      feels=sentiment_pipeline(reviews[i])
-      feeling =feels[0]
+    for i in range(len(reviews)):
+      feels = sentiment_pipeline(reviews[i])
+      feeling = feels[0]
       print(feeling['label'])      
 
 def part2():
@@ -53,8 +60,8 @@ def part2():
                           test_file='twitter_test')
 
     #Ask for training limit 
-    N_EXAMPLES_TO_TRAIN = 20 #Number of epochs
-    batch_size=150 
+    N_EXAMPLES_TO_TRAIN = 20 #Number of epochs. # move to top as named constant: https://peps.python.org/pep-0008/
+    batch_size=150  # move to top as named constant
 
     #Load new labels form dataset
     tag_dictionary = corpus.make_label_dictionary(label_type = "ner")
@@ -101,7 +108,7 @@ def part3():
         for line in f.readlines():
           english_text+=[line]
 
-    #Split english text to meet evaluation requirements
+    # Split english text to meet evaluation requirements
     english_list=[]
     for i in range(len(english_text)):
       english_list+=english_text[i].split()
@@ -126,7 +133,7 @@ def part3():
     helsinki_translation_model = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-es-en")
 
     #Load and run Helsinki translation model
-    from transformers import pipeline
+    from transformers import pipeline # imports at top 
     model_checkpoint = "Helsinki-NLP/opus-mt-es-en"
     translator = pipeline("translation", model=model_checkpoint)
     helsinki_translation= translator(spanish_text)
@@ -141,7 +148,7 @@ def part3():
       h_translated_list+=h_translated_text[i]
 
     #Load BLEU scorer, and print the results for each translation
-    import  nltk.translate.bleu_score as bleu
+    import  nltk.translate.bleu_score as bleu # imports at top 
     smoother = bleu.SmoothingFunction()
     helsinki_score=bleu.sentence_bleu(h_translated_list, english_list,smoothing_function=smoother.method1)
     google_score=bleu.sentence_bleu(g_translated_list, english_list,smoothing_function=smoother.method1)
